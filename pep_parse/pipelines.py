@@ -13,8 +13,7 @@ class PepParsePipeline:
         self.settings = get_project_settings()
         self.results_dir = BASE_DIR / "results"
         os.makedirs(self.results_dir, exist_ok=True)
-        self.summary_filepath = (
-            self.results_dir /
+        self.summary_filepath = self.results_dir / (
             f"status_summary_{self.settings.get('NOW_TIME')}.csv"
         )
 
