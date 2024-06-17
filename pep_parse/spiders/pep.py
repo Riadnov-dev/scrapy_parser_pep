@@ -24,8 +24,7 @@ class PepSpider(scrapy.Spider):
             title_parts = title.split(" - ", 1)
 
         number_part = title_parts[0]
-        name = title_parts[1] if len(
-            title_parts) == 2 else "Название отсутствует"
+        name = title_parts[1]
         number = number_part.split()[1]
         status = response.css("abbr::text").get()
 
