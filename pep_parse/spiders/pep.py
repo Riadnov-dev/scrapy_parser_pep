@@ -10,15 +10,24 @@ class PepSpider(scrapy.Spider):
 
     def parse(self, response):
         links = response.css(
-            'a[class="pep reference internal"]::attr(href)').getall()
+            "#numerical-index tbody tr td:nth-child(3) a::attr(href)"
+        ).getall()
         for link in links:
-            yield response.follow(link, callback=self.parse_pep)
+            title = response.css(f'a[href="{link}"]::attr(title)').get()
+            yield response.follow(
+                link, callback=self.parse_pep, cb_kwargs={"title": title}
+            )
 
-    def parse_pep(self, response):
-        title = response.css(".page-title::text").get()
-        number = title.split(" ")[1]
-        name = " ".join(title.split(" ")[3:])
+    def parse_pep(self, response, title):
+        title_parts = title.split(" – ", 1)
+        if len(title_parts) != 2:
+            title_parts = title.split(" - ", 1)
+
+        number_part = title_parts[0]
+        name = title_parts[1] if len(
+            title_parts) == 2 else "Название отсутствует"
+        number = number_part.split()[1]
         status = response.css("abbr::text").get()
 
-        item = PepParseItem(number=number, name=name, status=status)
+        item = PepParseItem(number=int(number), name=name, status=status)
         yield item
