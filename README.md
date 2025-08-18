@@ -1,28 +1,30 @@
 # 🕷️ Scrapy PEP Parser
 
-**Scrapy PEP Parser** is a Python-based web scraper built with [Scrapy](https://scrapy.org/) to extract information from the [Python Enhancement Proposals (PEP)](https://peps.python.org/) website.  
-It collects data on all PEPs — including their number, title, and status — and saves it into **two CSV files**:  
-- 📄 **PEP List**: number, title, status for each proposal  
-- 📊 **Status Summary**: aggregated statistics by status type
+A **Python web scraper** built with **Scrapy** to extract data from the [Python Enhancement Proposals (PEP)](https://peps.python.org/) website.  
+It collects structured information on all PEPs and saves it into **two CSV files**:  
 
+- 📄 **PEP List** — number, title, and status for each proposal  
+- 📊 **Status Summary** — aggregated statistics by status type  
+
+---
 
 ## 🧰 Tech Stack
 
-[![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python)](https://www.python.org/)
-[![Scrapy](https://img.shields.io/badge/Scrapy-Web%20Crawler-0A8C5F?logo=scrapy)](https://scrapy.org/)
-[![ItemLoaders](https://img.shields.io/badge/ItemLoaders-Data%20Parsing%20Helpers-FF9800?logo=python)](https://docs.scrapy.org/en/latest/topics/loaders.html)
-[![Logging](https://img.shields.io/badge/Logging-built--in-lightgrey?logo=python)](https://docs.python.org/3/library/logging.html)
-[![CSV Export](https://img.shields.io/badge/CSV%20Export-built--in-blue?logo=python)](https://docs.python.org/3/library/csv.html)
+<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/> <img src="https://img.shields.io/badge/Scrapy-0A8C5F?style=for-the-badge&logo=scrapy&logoColor=white"/> <img src="https://img.shields.io/badge/ItemLoaders-FF9800?style=for-the-badge&logo=python&logoColor=white"/> <img src="https://img.shields.io/badge/CSV%20Export-000000?style=for-the-badge&logo=csv&logoColor=white"/> <img src="https://img.shields.io/badge/Logging-808080?style=for-the-badge&logo=python&logoColor=white"/>
 
-
+---
 
 ## ✨ Features
-- Full PEP parsing from the official Python website
-- Data stored in clean CSV format
-- Status aggregation with document counts
-- `ItemLoaders` for structured and normalized data
-- Configurable settings in `settings.py`
-- Detailed logging for debugging
+
+- 🕸️ **Full PEP parsing** from the official Python website  
+- 📂 **CSV export** — structured results for further analysis  
+- 📊 **Status aggregation** with counts by type  
+- ⚙️ **ItemLoaders** for structured and normalized data  
+- 🛠️ **Configurable settings** in `settings.py`  
+- 📑 **Detailed logging** for debugging and transparency  
+
+---
+
 
 
 
